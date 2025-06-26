@@ -31,3 +31,7 @@ This project demonstrates a proof of concept (PoC) for passwordless authenticati
 3. Register a new credential and test login with your keypass device.
 
 For more details, see the code and comments in the respective files.
+
+## References
+
+- [FIDO2 .NET Library Examples](https://github.com/passwordless-lib/fido2-net-lib#examples)

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>wr_fido2_demo.auth.host</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Fido2" Version="4.0.0-beta.17" />
+      <PackageReference Include="Fido2.AspNet" Version="4.0.0-beta.17" />
+      <PackageReference Include="Fido2.Models" Version="4.0.0-beta.17" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,64 @@
+@page "/passwordless/{handler?}"
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Test</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="~/js/helpers.js"></script>
+</head>
+<body>
+<div>
+    <div class="columns">
+        <div class="column is-4">
+            <h3 class="title is-3">Register user</h3>
+            <form action="/mfa" method="post" id="register">
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="wannes" name="username" required>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-link">Register user</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="column is-2"></div>
+        <div class="column is-4">
+
+            <h3 class="title is-3">Sign in</h3>
+            <form action="/mfa" method="post" id="signin">
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="wannes" name="username" id="login-username" required>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-link">Sign in</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="~/js/passwordless.register.js"></script>
+<script src="~/js/passwordless.login.js"></script>

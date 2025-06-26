@@ -5,6 +5,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wr-fido2-demo.auth.host", "source\wr-fido2-demo.auth.host\wr-fido2-demo.auth.host.csproj", "{D25ABAF9-372E-47F6-B6CC-AE063F397199}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99 Solution Files", "99 Solution Files", "{66188574-458B-4ABC-B844-8EC5DCE061CC}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,3 +1,5 @@
+using wr_fido2_demo.auth.host.Development;
+
 namespace wr_fido2_demo.auth.host;
 
 public class Startup
@@ -14,6 +16,13 @@ public class Startup
         services.AddRazorPages();
         services.AddMemoryCache();
         services.AddDistributedMemoryCache();
+
+        services.AddHttpContextAccessor();
+        services.AddSingleton<DevelopmentInMemoryStore>();
+        services.AddMediatR(cfg =>
+        {
+            cfg.RegisterServicesFromAssemblyContaining<Program>();
+        });
 
         services.AddSession(options =>
         {

@@ -17,7 +17,7 @@ A demonstration project for passwordless authentication using FIDO2/WebAuthn sta
 ## Use Cases
 
 Detailed documentation for each use case is available in their respective directories:
-- [Passkey Registration](source/wr-fido2-demo.auth.host/UseCases/PasskeyCredentialCreation/_README.md) - Creating new passkey credentials
+- [Passkey Registration](source/wr-fido2-demo.auth.host/UseCases/PasskeyRegistration/_README.md) - Creating new passkey credentials
 - [Passkey Login](source/wr-fido2-demo.auth.host/UseCases/PasskeyLogin/_README.md) - Authenticating with existing passkeys
 
 ## Details

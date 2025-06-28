@@ -16,7 +16,7 @@ public class PasskeyController: ControllerBase
     }
     
     [HttpPost("login/options")]
-    public async Task<ActionResult<AssertionOptions>> GetLoginOptions(GetLoginOptionsQuery query)
+    public async Task<ActionResult<AssertionOptions>> GetLoginOptions([FromForm] GetLoginOptionsQuery query)
     {
         var options = await _mediator.Send(query);
         return new OkObjectResult(options);

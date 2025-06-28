@@ -4,6 +4,9 @@ namespace wr_fido2_demo.auth.host.Development;
 
 public class DevelopmentInMemoryStore
 {
+    public static readonly DevelopmentInMemoryStore Instance = new();
+    private DevelopmentInMemoryStore() {}
+    
     private readonly ConcurrentDictionary<string, Fido2User> _storedUsers = new();
     private readonly List<StoredCredential> _storedCredentials = new();
 

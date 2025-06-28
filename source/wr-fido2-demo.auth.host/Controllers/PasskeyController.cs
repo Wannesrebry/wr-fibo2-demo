@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using wr_fido2_demo.auth.host.UseCases.PasskeyCredentialCreation;
 using wr_fido2_demo.auth.host.UseCases.PasskeyLogin;
+using wr_fido2_demo.auth.host.UseCases.PasskeyRegistration;
 
 namespace wr_fido2_demo.auth.host.Controllers;
 

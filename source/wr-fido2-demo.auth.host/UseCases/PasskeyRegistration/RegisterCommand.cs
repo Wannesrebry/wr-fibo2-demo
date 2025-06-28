@@ -1,8 +1,7 @@
 using MediatR;
-using wr_fido2_demo.auth.host.Controllers;
 using wr_fido2_demo.auth.host.Development;
 
-namespace wr_fido2_demo.auth.host.UseCases.PasskeyCredentialCreation;
+namespace wr_fido2_demo.auth.host.UseCases.PasskeyRegistration;
 
 public sealed record RegisterCommand : IRequest<RegisteredPublicKeyCredential>
 {

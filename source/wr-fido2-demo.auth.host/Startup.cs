@@ -18,7 +18,6 @@ public class Startup
         services.AddDistributedMemoryCache();
 
         services.AddHttpContextAccessor();
-        services.AddSingleton<DevelopmentInMemoryStore>();
         services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssemblyContaining<Program>();

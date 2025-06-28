@@ -13,7 +13,7 @@ internal sealed class LoginCommandHandler : IRequestHandler<LoginCommand, Verify
 {
     private readonly IFido2 _fido2;
     private readonly IHttpContextAccessor _httpContextAccessor;
-    private readonly DevelopmentInMemoryStore DemoStore = MyController.DemoStorage;
+    private readonly DevelopmentInMemoryStore _demoStore = DevelopmentInMemoryStore.Instance;
     public LoginCommandHandler(IFido2 fido2, IHttpContextAccessor httpContextAccessor)
     {
         _fido2 = fido2;
@@ -31,7 +31,7 @@ internal sealed class LoginCommandHandler : IRequestHandler<LoginCommand, Verify
         var options = AssertionOptions.FromJson(jsonOptions);
 
         // 2. Get registered credential from database
-        var creds = DemoStore.GetCredentialById(request.Assertion.RawId) ?? throw new Exception("Unknown credentials");
+        var creds = _demoStore.GetCredentialById(request.Assertion.RawId) ?? throw new Exception("Unknown credentials");
 
         // 3. Get credential counter from database
         var storedCounter = creds.SignCount;
@@ -39,7 +39,7 @@ internal sealed class LoginCommandHandler : IRequestHandler<LoginCommand, Verify
         // 4. Create callback to check if the user handle owns the credentialId
         IsUserHandleOwnerOfCredentialIdAsync callback = static async (args, cancellationToken) =>
         {
-            var storedCreds = await MyController.DemoStorage.GetCredentialsByUserHandleAsync(args.UserHandle, cancellationToken);
+            var storedCreds = await DevelopmentInMemoryStore.Instance.GetCredentialsByUserHandleAsync(args.UserHandle, cancellationToken);
             return storedCreds.Exists(c => c.Descriptor.Id.SequenceEqual(args.CredentialId));
         };
 
@@ -54,7 +54,7 @@ internal sealed class LoginCommandHandler : IRequestHandler<LoginCommand, Verify
         }, cancellationToken: cancellationToken);
 
         // 6. Store the updated counter
-        DemoStore.UpdateCounter(res.CredentialId, res.SignCount);
+        _demoStore.UpdateCounter(res.CredentialId, res.SignCount);
 
         return res;
     }

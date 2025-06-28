@@ -18,7 +18,7 @@ internal sealed class GetLoginOptionsQueryHandler : IRequestHandler<GetLoginOpti
     private readonly IHttpContextAccessor _httpContextAccessor;
     public GetLoginOptionsQueryHandler(IFido2 fido2, IHttpContextAccessor httpContextAccessor)
     {
-        _inMemoryStore = MyController.DemoStorage;
+        _inMemoryStore = DevelopmentInMemoryStore.Instance;
         _fido2 = fido2;
         _httpContextAccessor = httpContextAccessor;
     }

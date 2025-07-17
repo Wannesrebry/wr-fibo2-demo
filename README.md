@@ -2,6 +2,8 @@
 
 A demonstration project for passwordless authentication using FIDO2/WebAuthn standards. This solution shows how to implement secure authentication using hardware or platform authenticators (security keys, Windows Hello, Touch ID) instead of traditional passwords.
 
+## [FIDO2](./fido2.md)
+
 ## Project Structure
 
 - `source/`
